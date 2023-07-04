@@ -1,4 +1,7 @@
-from src.item import Item
+import sys
+sys.path.append(r'C:\Users\Hp\PycharmProjects\section4hw_esp\electronics-shop-project/src')
+from item import Item
+# такой усложненный импорт из-за того, что простое src.item мой пайчарм почему-то не видит
 
 if __name__ == '__main__':
     item1 = Item("Смартфон", 10000, 20)
@@ -15,4 +18,5 @@ if __name__ == '__main__':
     print(item1.price)  # 8000.0
     print(item2.price)  # 20000
 
-    print(Item.all)  # [<__main__.Item object at 0x000001EC6250C690>, <__main__.Item object at 0x000001EC6250C6D0>]
+    # изменил название атрибута с экземплярами т.к. пайчарм ругался на него, как на функцию "all"
+    print(Item.items)  # [<__main__.Item object at 0x000001EC6250C690>, <__main__.Item object at 0x000001EC6250C6D0>]

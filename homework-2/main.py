@@ -1,4 +1,8 @@
-from src.item import Item
+import sys
+sys.path.append(r'C:\Users\Hp\PycharmProjects\section4hw_esp\electronics-shop-project\src')
+from item import Item
+
+# такой усложненный импорт из-за того, что простое src.item мой пайчарм почему-то не видит
 
 if __name__ == '__main__':
     item = Item('Телефон', 10000, 5)
@@ -12,9 +16,9 @@ if __name__ == '__main__':
     # Exception: Длина наименования товара превышает 10 символов.
 
     Item.instantiate_from_csv()  # создание объектов из данных файла
-    assert len(Item.all) == 5  # в файле 5 записей с данными по товарам
+    assert len(Item.items) == 5  # в файле 5 записей с данными по товарам
 
-    item1 = Item.all[0]
+    item1 = Item.items[0]
     assert item1.name == 'Смартфон'
 
     assert Item.string_to_number('5') == 5
