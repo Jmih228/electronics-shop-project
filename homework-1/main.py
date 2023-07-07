@@ -1,5 +1,5 @@
 import sys
-sys.path.append(r'C:\Users\Hp\PycharmProjects\section4hw_esp\electronics-shop-project/src')
+sys.path.append(r'../src')
 from item import Item
 # такой усложненный импорт из-за того, что простое src.item мой пайчарм почему-то не видит
 

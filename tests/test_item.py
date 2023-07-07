@@ -1,6 +1,6 @@
 """Здесь надо написать тесты с использованием pytest для модуля item."""
 import sys
-sys.path.append(r'C:\Users\Hp\PycharmProjects\section4hw_esp\electronics-shop-project\src')
+sys.path.append(r'../src')
 from item import Item
 # такой усложненный импорт из-за того, что простое src.item мой пайчарм почему-то не видит
 
@@ -38,3 +38,12 @@ def test_string_to_number():
     assert Item.string_to_number('5') == 5
     assert Item.string_to_number('5.0') == 5
     assert Item.string_to_number('5.5') == 5
+
+def test_repr_method():
+    item1 = Item("Смартфон", 10000, 20)
+    assert repr(item1) == "Item('Смартфон', 10000, 20)"
+
+def test_str_method():
+    item2 = Item("Смартфон", 10000, 20)
+    assert str(item2) == 'Смартфон'
+

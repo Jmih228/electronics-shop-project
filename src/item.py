@@ -20,6 +20,12 @@ class Item:
         self.quantity = quantity
         self.items.append(self)
 
+    def __repr__(self):
+        return f"Item('{self.__name}', {self.price}, {self.quantity})"
+
+    def __str__(self):
+        return self.__name
+
     @property
     def name(self):
         return self.__name
@@ -48,7 +54,7 @@ class Item:
     @classmethod
     def instantiate_from_csv(cls):
         Item.items = []
-        with open(r'C:\Users\Hp\PycharmProjects\section4hw_esp\electronics-shop-project\src\items.csv') as items:
+        with open(r'../src/items.csv') as items:
             dict_items = DictReader(items)
             for row in dict_items:
                 Item(row['name'], row['price'], row['quantity'])
