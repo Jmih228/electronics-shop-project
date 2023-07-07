@@ -39,11 +39,18 @@ def test_string_to_number():
     assert Item.string_to_number('5.0') == 5
     assert Item.string_to_number('5.5') == 5
 
+
+def test_name_setter():
+    item1 = Item("Телефон", 10000, 20)
+    item1.name = 'Смартфон'
+    assert item.name == 'Смартфон'
+
+
 def test_repr_method():
-    item1 = Item("Смартфон", 10000, 20)
-    assert repr(item1) == "Item('Смартфон', 10000, 20)"
+    item2 = Item("Смартфон", 10000, 20)
+    assert repr(item2) == "Item('Смартфон', 10000, 20)"
+
 
 def test_str_method():
-    item2 = Item("Смартфон", 10000, 20)
-    assert str(item2) == 'Смартфон'
-
+    item3 = Item("Смартфон", 10000, 20)
+    assert str(item3) == 'Смартфон'
