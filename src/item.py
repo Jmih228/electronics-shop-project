@@ -1,5 +1,7 @@
 from csv import DictReader
-
+import sys
+sys.path.append(r'../src')
+import phone
 
 class Item:
     """
@@ -26,6 +28,10 @@ class Item:
 
     def __str__(self):
         return self.__name
+
+    def __add__(self, other):
+        if isinstance(self, Item) or isinstance(self, phone.Phone) and isinstance(other, Item) or isinstance(other, phone.Phone):
+            return self.quantity + other.quantity
 
     @property
     def name(self):
