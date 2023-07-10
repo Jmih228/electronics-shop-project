@@ -1,7 +1,6 @@
 from csv import DictReader
 import sys
 sys.path.append(r'../src')
-import phone
 
 class Item:
     """
